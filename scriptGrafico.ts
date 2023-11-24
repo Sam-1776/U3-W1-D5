@@ -121,7 +121,7 @@ btnE.onclick = () =>{
         span[i].innerHTML = " ";
         
     }
-    let durata = h4.innerHTML / 60
+    let durata: number = Number(h4.innerHTML) / 60
     called.Chiamata(durata)
     h4.innerHTML = " ";
     clearInterval(time)

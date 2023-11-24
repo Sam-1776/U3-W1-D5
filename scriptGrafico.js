@@ -94,7 +94,7 @@ btnE.onclick = function () {
     for (var i = 0; i < span.length; i++) {
         span[i].innerHTML = " ";
     }
-    var durata = h4.innerHTML / 60;
+    var durata = Number(h4.innerHTML) / 60;
     called.Chiamata(durata);
     h4.innerHTML = " ";
     clearInterval(time);

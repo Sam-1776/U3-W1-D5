@@ -17,66 +17,70 @@ class User implements Smartphone{
 
     Ricarica(unaRicarica: number): void{
         this.carica += unaRicarica;  
+        console.log(`Hai effettuato una ricarica di ${unaRicarica}€`);
+        
     }
 
     Chiamata(minutiDurata: number): void{
         let costo = minutiDurata * 0.2
         this.numeroChiamate++
         this.carica = this.carica - costo
+        console.log(`Hai effettuato una chiamata ${minutiDurata} min`);
+        
     }
 
     numero404(): number{
+        console.log(`Il tuo saldo è di ${this.carica}€`);
         return this.carica
     }
 
     getNumeroChiamate(): number{
+        console.log(`Hai efftuato ${this.numeroChiamate} di chiamate`);
         return this.numeroChiamate
     }
     azzeraChiamate(): void{
+        console.log(`Hai azzerato le chiamate`);
         this.numeroChiamate = 0
     }
 }
 
 let Piero = new User(50, 0, 'Piero', 'Fanelli')
-console.log(`L'utente ${Piero.nome} ${Piero.cognome}`);
-console.log(`Ha di residuo ${Piero.carica}€`);
+console.log(`---------- L'utente ${Piero.nome} ${Piero.cognome} ----------`);
+Piero.numero404()
 Piero.Ricarica(100)
-console.log(`Ha di residuo ${Piero.carica}€`);
+Piero.numero404()
 Piero.Chiamata(2)
-console.log(`Il nuovo residuo è ${Piero.numero404()}€`);
+Piero.numero404()
 Piero.Chiamata(10)
-console.log(`Il nuovo residuo è ${Piero.numero404()}€`);
-console.log(`L'utente ha effettuato ${Piero.getNumeroChiamate()} chiamate`);
+Piero.numero404()
+Piero.getNumeroChiamate()
 Piero.azzeraChiamate()
-console.log(`L'utente ha effettuato ${Piero.getNumeroChiamate()} chiamate`);
 
 
 let Maria = new User(20, 2, 'Maria', 'Russo')
-console.log(`L'utente ${Maria.nome} ${Maria.cognome}`);
-console.log(`Ha di residuo ${Maria.carica}€`);
-Maria.Ricarica(10)
-console.log(`Ha di residuo ${Maria.carica}€`);
+console.log(`---------- L'utente ${Maria.nome} ${Maria.cognome} ----------`);
+Maria.numero404()
+Maria.Ricarica(20)
+Maria.numero404()
 Maria.Chiamata(2)
-console.log(`Il nuovo residuo è ${Maria.numero404()}€`);
-Maria.Chiamata(10)
-console.log(`Il nuovo residuo è ${Maria.numero404()}€`);
-console.log(`L'utente ha effettuato ${Maria.getNumeroChiamate()} chiamate`);
+Maria.numero404()
+Maria.Chiamata(5)
+Maria.numero404()
+Maria.getNumeroChiamate()
 Maria.azzeraChiamate()
-console.log(`L'utente ha effettuato ${Maria.getNumeroChiamate()} chiamate`);
 
 
 let Gianni = new User(100, 20, 'Gianni', 'Gianni')
-console.log(`L'utente ${Gianni.nome} ${Gianni.cognome}`);
-console.log(`Ha di residuo ${Gianni.carica}€`);
+console.log(`---------- L'utente ${Gianni.nome} ${Gianni.cognome} ----------`);
+Gianni.numero404()
 Gianni.Ricarica(100)
-console.log(`Ha di residuo ${Gianni.carica}€`);
-Gianni.Chiamata(30)
-console.log(`Il nuovo residuo è ${Gianni.numero404()}€`);
+Gianni.numero404()
+Gianni.Chiamata(40)
+Gianni.numero404()
 Gianni.Chiamata(10)
-console.log(`Il nuovo residuo è ${Gianni.numero404()}€`);
-console.log(`L'utente ha effettuato ${Gianni.getNumeroChiamate()} chiamate`);
+Gianni.numero404()
+Gianni.getNumeroChiamate()
 Gianni.azzeraChiamate()
-console.log(`L'utente ha effettuato ${Gianni.getNumeroChiamate()} chiamate`);
 
 
 

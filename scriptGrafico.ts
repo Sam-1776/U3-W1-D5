@@ -114,7 +114,11 @@ function check(x:string) {
             h4.innerText = `hai fatto una ricarica di ${numR}€`
             div?.appendChild(h4)  
         
-    }else{
+    }else if (control == 111) {
+        called.azzeraChiamate()
+        h4.innerText = `hai azzerato le chiamate`
+        div?.appendChild(h4)
+    } else {
         tempo()
     }
 }
@@ -127,10 +131,10 @@ btnE.onclick = () =>{
         span[i].innerHTML = " ";
         
     }
-    let durata: number = Number(h4.innerHTML) / 60
-    if (typeof h4 === "number") {
+    let durata = Number(h4.innerHTML) / 60
+    console.log(isNaN(durata));
+    if (isNaN(durata) === false) {
         called.Chiamata(durata)
-        console.log(typeof durata);
     }
     h4.innerHTML = " ";
     clearInterval(time)
@@ -164,7 +168,7 @@ function backHome() {
     menu.classList.add("active")
 }
 
-let times = 0;
+let times: number = 0;
 let time: any = null;
 function tempo() {
     clearInterval(time);

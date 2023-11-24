@@ -87,6 +87,11 @@ function check(x) {
         h4.innerText = "hai fatto una ricarica di ".concat(numR, "\u20AC");
         div === null || div === void 0 ? void 0 : div.appendChild(h4);
     }
+    else if (control == 111) {
+        called.azzeraChiamate();
+        h4.innerText = "hai azzerato le chiamate";
+        div === null || div === void 0 ? void 0 : div.appendChild(h4);
+    }
     else {
         tempo();
     }
@@ -99,9 +104,9 @@ btnE.onclick = function () {
         span[i].innerHTML = " ";
     }
     var durata = Number(h4.innerHTML) / 60;
-    if (typeof h4 === "number") {
+    console.log(isNaN(durata));
+    if (isNaN(durata) === false) {
         called.Chiamata(durata);
-        console.log(typeof durata);
     }
     h4.innerHTML = " ";
     clearInterval(time);

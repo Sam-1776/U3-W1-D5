@@ -11,7 +11,7 @@ var UserP = /** @class */ (function () {
         var costo = minutiDurata * 0.2;
         this.numeroChiamate++;
         this.carica = this.carica - costo;
-        console.log("Hai effettuato una chiamata ".concat(minutiDurata, " min"));
+        console.log("Hai effettuato una chiamata ".concat(minutiDurata));
     };
     UserP.prototype.numero404 = function () {
         console.log("Il tuo saldo \u00E8 di ".concat(this.carica, "\u20AC"));
@@ -94,6 +94,8 @@ btnE.onclick = function () {
     for (var i = 0; i < span.length; i++) {
         span[i].innerHTML = " ";
     }
+    var durata = h4.innerHTML / 60;
+    called.Chiamata(durata);
     h4.innerHTML = " ";
     clearInterval(time);
 };
@@ -127,8 +129,5 @@ function tempo() {
         h4.innerText = "".concat(times);
         times++;
     }, 1000);
-    var durata = times;
-    console.log(durata);
-    called.Chiamata(durata);
     div === null || div === void 0 ? void 0 : div.appendChild(h4);
 }

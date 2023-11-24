@@ -21,7 +21,7 @@ class UserP implements Smartphone{
         let costo = minutiDurata * 0.2
         this.numeroChiamate++
         this.carica = this.carica - costo
-        console.log(`Hai effettuato una chiamata ${minutiDurata} min`);
+        console.log(`Hai effettuato una chiamata ${minutiDurata}`);
         
     }
 
@@ -121,6 +121,8 @@ btnE.onclick = () =>{
         span[i].innerHTML = " ";
         
     }
+    let durata = h4.innerHTML / 60
+    called.Chiamata(durata)
     h4.innerHTML = " ";
     clearInterval(time)
 }
@@ -161,9 +163,5 @@ function tempo() {
       h4.innerText = `${times}`;
       times++;
     }, 1000);
-    let durata = times 
-    console.log(durata);
-    
-    called.Chiamata(durata)
     div?.appendChild(h4)
   }

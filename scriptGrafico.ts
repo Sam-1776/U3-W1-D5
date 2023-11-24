@@ -108,6 +108,8 @@ function check(x:string) {
             h4.innerText = `hai fatto una ricarica di ${numR}€`
             div?.appendChild(h4)  
         
+    }else{
+        tempo()
     }
 }
 
@@ -120,6 +122,7 @@ btnE.onclick = () =>{
         
     }
     h4.innerHTML = " ";
+    clearInterval(time)
 }
 
 
@@ -150,4 +153,17 @@ function backHome() {
     menu.classList.add("active")
 }
 
-
+let time: any = null;
+function tempo() {
+    clearInterval(time);
+    let times = 0;
+    time = setInterval(() => {
+      h4.innerText = `${times}`;
+      times++;
+      if (times <= 60) {
+        let durata = times / 60
+          called.Chiamata(durata)
+      }
+    }, 1000);
+    div?.appendChild(h4)
+  }

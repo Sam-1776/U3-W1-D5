@@ -83,6 +83,9 @@ function check(x) {
         h4.innerText = "hai fatto una ricarica di ".concat(numR, "\u20AC");
         div === null || div === void 0 ? void 0 : div.appendChild(h4);
     }
+    else {
+        tempo();
+    }
 }
 var btnE = document.querySelector("#end");
 btnE.onclick = function () {
@@ -92,6 +95,7 @@ btnE.onclick = function () {
         span[i].innerHTML = " ";
     }
     h4.innerHTML = " ";
+    clearInterval(time);
 };
 var recenti = document.getElementById("Recents");
 var recents = document.getElementById("recenti");
@@ -114,4 +118,18 @@ function backHome() {
     recenti === null || recenti === void 0 ? void 0 : recenti.classList.add("d-none");
     recents.classList.remove("active");
     menu.classList.add("active");
+}
+var time = null;
+function tempo() {
+    clearInterval(time);
+    var times = 0;
+    time = setInterval(function () {
+        h4.innerText = "".concat(times);
+        times++;
+        if (times <= 60) {
+            var durata = times / 60;
+            called.Chiamata(durata);
+        }
+    }, 1000);
+    div === null || div === void 0 ? void 0 : div.appendChild(h4);
 }

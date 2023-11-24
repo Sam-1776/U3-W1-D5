@@ -119,17 +119,16 @@ function backHome() {
     recents.classList.remove("active");
     menu.classList.add("active");
 }
+var times = 0;
 var time = null;
 function tempo() {
     clearInterval(time);
-    var times = 0;
     time = setInterval(function () {
         h4.innerText = "".concat(times);
         times++;
-        if (times <= 60) {
-            var durata = times / 60;
-            called.Chiamata(durata);
-        }
     }, 1000);
+    var durata = times;
+    console.log(durata);
+    called.Chiamata(durata);
     div === null || div === void 0 ? void 0 : div.appendChild(h4);
 }

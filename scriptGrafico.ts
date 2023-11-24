@@ -153,17 +153,17 @@ function backHome() {
     menu.classList.add("active")
 }
 
+let times = 0;
 let time: any = null;
 function tempo() {
     clearInterval(time);
-    let times = 0;
     time = setInterval(() => {
       h4.innerText = `${times}`;
       times++;
-      if (times <= 60) {
-        let durata = times / 60
-          called.Chiamata(durata)
-      }
     }, 1000);
+    let durata = times 
+    console.log(durata);
+    
+    called.Chiamata(durata)
     div?.appendChild(h4)
   }

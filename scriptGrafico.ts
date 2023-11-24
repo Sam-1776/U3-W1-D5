@@ -1,3 +1,9 @@
+/* CALL NUMBER */
+// 404 per chiamare la funzione number 404
+// 4242 per chiamare la funzione ricarica 
+// qualsiasi numero avvia la funzione chiamata
+
+
 interface Smartphone {
     carica: number;
     numeroChiamate: number;
@@ -122,7 +128,10 @@ btnE.onclick = () =>{
         
     }
     let durata: number = Number(h4.innerHTML) / 60
-    called.Chiamata(durata)
+    if (typeof h4 === "number") {
+        called.Chiamata(durata)
+        console.log(typeof durata);
+    }
     h4.innerHTML = " ";
     clearInterval(time)
 }

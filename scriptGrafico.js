@@ -1,3 +1,7 @@
+/* CALL NUMBER */
+// 404 per chiamare la funzione number 404
+// 4242 per chiamare la funzione ricarica 
+// qualsiasi numero avvia la funzione chiamata
 var UserP = /** @class */ (function () {
     function UserP(_carica, _numeroChiamate) {
         this.carica = _carica;
@@ -95,7 +99,10 @@ btnE.onclick = function () {
         span[i].innerHTML = " ";
     }
     var durata = Number(h4.innerHTML) / 60;
-    called.Chiamata(durata);
+    if (typeof h4 === "number") {
+        called.Chiamata(durata);
+        console.log(typeof durata);
+    }
     h4.innerHTML = " ";
     clearInterval(time);
 };

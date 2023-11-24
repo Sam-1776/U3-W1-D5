@@ -1,3 +1,5 @@
+/* IMPOSTARE RISOLUZIONE SM */
+
 /* CALL NUMBER */
 // 404 per chiamare la funzione number 404
 // 4242 per chiamare la funzione ricarica 

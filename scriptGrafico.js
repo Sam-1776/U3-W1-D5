@@ -1,8 +1,4 @@
-/* CALL NUMBER */
-// 404 per chiamare la funzione number 404
-// 4242 per chiamare la funzione ricarica 
-// qualsiasi numero avvia la funzione chiamata
-// 111 per azzerare le chiamate
+/* IMPOSTARE RISOLUZIONE SM */
 var UserP = /** @class */ (function () {
     function UserP(_carica, _numeroChiamate) {
         this.carica = _carica;
